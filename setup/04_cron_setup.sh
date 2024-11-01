@@ -6,4 +6,4 @@ mkdir -p /home/student
 # Clear existing tar.gz file if present
 rm -f /home/student/bowser_capture.tar.gz
 
-echo "Setup complete: Directory prepared for cron task."
+echo "Setup complete!"

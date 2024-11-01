@@ -10,7 +10,6 @@ sudo sed -i 's/^Listen 80$/Listen 82/' /etc/httpd/conf/httpd.conf
 echo "Wubba Lubba Dub Dub!" | sudo tee /var/www/html/index.html
 
 # Start and enable httpd
-sudo systemctl enable --now httpd
+sudo systemctl enable --now httpd >/dev/null 2>&1
 
-echo "Setup complete: httpd configured to listen on port 82 with 'Wubba Lubba Dub Dub!' content."
-
+echo "Setup complete!"
