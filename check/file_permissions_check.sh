@@ -12,4 +12,3 @@ if [[ $(stat -c "%U %G %A" /var/tmp/fstab) == "harry starwars -rw-r--r--" ]]; th
 else
     echo -e "\e[31mNO PASS- TRY AGAIN!\e[0m"
 fi
-

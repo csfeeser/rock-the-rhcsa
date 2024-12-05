@@ -7,8 +7,8 @@ if [[ ! -d /root/findresults ]]; then
 fi
 
 # Check if the correct files owned by 'frank' are present in /root/findresults
-EXPECTED_FILES=$(find / -user frank 2>/dev/null)
-COPIED_FILES=$(ls /root/findresults 2>/dev/null)
+EXPECTED_FILES=$(sudo find / -user frank 2>/dev/null)
+COPIED_FILES=$(sudo ls /root/findresults 2>/dev/null)
 
 if [[ "$EXPECTED_FILES" == "$COPIED_FILES" ]]; then
     echo -e "\e[32mSUCCESS!\e[0m"

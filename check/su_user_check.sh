@@ -3,7 +3,7 @@
 # Check if the user 'shrek' exists
 if id "shrek" &>/dev/null; then
     # Try switching to the user 'shrek' using 'su'
-    su -c "whoami" - shrek &>/dev/null
+    sudo su -c "whoami" - shrek &>/dev/null
 
     if [[ $? -eq 0 ]]; then
         echo -e "\e[32mSUCCESS!\e[0m"
@@ -13,4 +13,3 @@ if id "shrek" &>/dev/null; then
 else
     echo -e "\e[31mNO PASS- TRY AGAIN! The user 'shrek' does not exist.\e[0m"
 fi
-

@@ -2,7 +2,7 @@
 
 # Ensure wget is installed
 if ! command -v wget &>/dev/null; then
-    yum install -y wget
+    sudo yum install -y wget
 fi
 
 # Download the movie-characters.txt file

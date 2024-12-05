@@ -2,7 +2,7 @@
 
 # Create the user 'neo' if it doesn't exist
 if ! id "neo" &>/dev/null; then
-    useradd neo
+    sudo useradd neo
 fi
 
 echo "Setup is complete. Begin your task!"
