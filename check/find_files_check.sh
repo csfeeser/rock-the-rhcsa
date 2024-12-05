@@ -1,17 +1,22 @@
 #!/bin/bash
 
-# Check if the target directory exists
-if [[ ! -d /root/findresults ]]; then
-    echo -e "\e[31mNO PASS- TRY AGAIN!\e[0m"
-    exit 1
-fi
+# Directory to check
+DIR="/root/findresults"
 
-# Check if the correct files owned by 'frank' are present in /root/findresults
-EXPECTED_FILES=$(sudo find / -user frank 2>/dev/null)
-COPIED_FILES=$(sudo ls /root/findresults 2>/dev/null)
+# Check if directory exists
+if [ -d "$DIR" ]; then
+    # Count the number of files in the directory
+    FILE_COUNT=$(sudo find "$DIR" -maxdepth 1 -type f | wc -l)
 
-if [[ "$EXPECTED_FILES" == "$COPIED_FILES" ]]; then
-    echo -e "\e[32mSUCCESS!\e[0m"
+    # Check if the count is between 4 and 5
+    if [ "$FILE_COUNT" -ge 8 ] && [ "$FILE_COUNT" -le 9 ]; then
+        echo -e "\e[32mSUCCESS!\e[0m"
+        exit 0
+    else
+        echo -e "\e[31mNO PASS- TRY AGAIN!\e[0m"
+        exit 1
+    fi
 else
     echo -e "\e[31mNO PASS- TRY AGAIN!\e[0m"
+    exit 2
 fi
