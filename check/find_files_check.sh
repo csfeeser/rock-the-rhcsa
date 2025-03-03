@@ -9,7 +9,7 @@ if [ -d "$DIR" ]; then
     FILE_COUNT=$(sudo find "$DIR" -maxdepth 1 -type f | wc -l)
 
     # Check if the count is between 4 and 5
-    if [ "$FILE_COUNT" -ge 8 ] && [ "$FILE_COUNT" -le 9 ]; then
+    if [ "$FILE_COUNT" -ge 4 ] && [ "$FILE_COUNT" -le 5 ]; then
         echo -e "\e[32mSUCCESS!\e[0m"
         exit 0
     else
