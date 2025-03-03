@@ -6,8 +6,8 @@ if id natasha &>/dev/null && id harry &>/dev/null && id sarah &>/dev/null &&
    [[ $(id -Gn harry) == *"starwars"* ]] &&
    [[ $(id -Gn sarah) == *"startrek"* ]] &&
    [[ $(id -u harry) -eq 2000 ]] &&
-   [[ $(getent passwd sarah | cut -d: -f7) == "/sbin/nologin" ]]; then
+   ([[ $(getent passwd sarah | cut -d: -f7) == "/sbin/nologin" ]] || [[ $(getent passwd sarah | cut -d: -f7) == "/usr/sbin/nologin" ]]); then
     echo -e "\e[32mSUCCESS!\e[0m"
 else
-    echo -e "\e[31mNO PASS- TRY AGAIN!\e[0m"
+    echo -e "\e[31mNO PASS - TRY AGAIN!\e[0m"
 fi
